@@ -30,8 +30,8 @@ const commands = [
                 required: true,
             },
             {
-                name: 'team',
-                description: 'team',
+                name: 'mention',
+                description: 'mention',
                 type: 8,
                 required: false
             }
@@ -63,7 +63,7 @@ client.on('interactionCreate', async (interaction) => {
                     .setStyle('Success')
             );
 
-        const content = `PR: ${interaction.options.data[0].value} ${interaction.options.data[1] != null ? `Team: ${interaction.options.data[1].role.name}` : ''}`
+        const content = `${interaction.options.data[0].value} ${interaction.options.data[1] != null ? `<@&${interaction.options.data[1].role.id}>` : ''}`
 
         await interaction.reply({
             content: content,
