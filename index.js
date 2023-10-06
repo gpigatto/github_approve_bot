@@ -54,8 +54,6 @@ const commands = [
 })();
 
 client.on('interactionCreate', async (interaction) => {
-    console.log(interaction)
-
     if (interaction.isChatInputCommand()) {
         const row = new ActionRowBuilder()
             .addComponents(
